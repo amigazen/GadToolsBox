@@ -2,15 +2,15 @@
 # Makefile for BOOPSI objects by Tomasz Muszynski
 #
 
-all: progress.gadget listview.gadget smartbitmap.image page.gadget install
+all: progress.gadget listview.gadget smartbitmap.image page.gadget
 
 progress.gadget: progress.o
   slink <WITH <
 LIBPREFIX _
 LIBFD progress.fd
 TO progress.gadget
-FROM lib:libent.o lib:libinit.o progress.o
-LIB lib:sc.lib lib:amiga.lib
+FROM sc:lib/libent.o sc:lib/libinit.o progress.o
+LIB sc:lib/sc.lib lib:amiga.lib
 NOICONS
 SC
 SD
@@ -23,8 +23,8 @@ page.gadget: page.o
 LIBPREFIX _
 LIBFD page.fd
 TO page.gadget
-FROM lib:libent.o lib:libinit.o page.o
-LIB lib:sc.lib lib:amiga.lib
+FROM sc:lib/libent.o sc:lib/libinit.o page.o
+LIB sc:lib/sc.lib lib:amiga.lib
 NOICONS
 SC
 SD
@@ -37,8 +37,8 @@ listview.gadget: listview.o
 LIBPREFIX _
 LIBFD listview.fd
 TO listview.gadget
-FROM lib:libent.o lib:libinit.o listview.o
-LIB lib:sc.lib lib:amiga.lib
+FROM sc:lib/libent.o sc:lib/libinit.o listview.o
+LIB li  b:sc.lib lib:amiga.lib
 NOICONS
 SC
 SD
@@ -51,8 +51,8 @@ smartbitmap.image: smartbitmap.o
 LIBPREFIX _
 LIBFD smartbitmap.fd
 TO smartbitmap.image
-FROM lib:libent.o lib:libinit.o smartbitmap.o
-LIB lib:sc.lib lib:amiga.lib
+FROM sc:lib/libent.o sc:lib/libinit.o smartbitmap.o
+LIB sc:lib/sc.lib lib:amiga.lib
 NOICONS
 SC
 SD
@@ -85,10 +85,10 @@ bumprev_page:
 
 # Make pragma
 pragma: progress.fd listview.fd smartbitmap.fd
-  @-fd2pragma progress.fd Include:pragmas/progress_pragmas.h
-  @-fd2pragma listview.fd Include:pragmas/listview_pragmas.h
-  @-fd2pragma smartbitmap.fd Include:pragmas/smartbitmap_pragmas.h
-  @-fd2pragma page.fd Include:pragmas/page_pragmas.h
+  @-fd2pragma progress.fd //SDK/Include_h/pragmas/progress_pragmas.h
+  @-fd2pragma listview.fd //SDK/Include_h/pragmas/listview_pragmas.h
+  @-fd2pragma smartbitmap.fd //SDK/Include_h/pragmas/smartbitmap_pragmas.h
+  @-fd2pragma page.fd //SDK/Include_h/pragmas/page_pragmas.h
 
 # Make autodocs
 autodocs: progress_gc.src listview_gc.src smartbitmap_ic.src
@@ -99,8 +99,8 @@ autodocs: progress_gc.src listview_gc.src smartbitmap_ic.src
 
 # Install it
 install:
-  @-copy progress.gadget SYS:Classes/Gadgets
-  @-copy listview.gadget SYS:Classes/Gadgets
-  @-copy page.gadget SYS:Classes/Gadgets
-  @-copy smartbitmap.image SYS:Classes/Images
+  @-copy progress.gadget //SDK/Classes/Gadgets
+  @-copy listview.gadget //SDK/Classes/Gadgets
+  @-copy page.gadget //SDK/Classes/Gadgets
+  @-copy smartbitmap.image //SDK/Classes/Images
   @-avail FLUSH
