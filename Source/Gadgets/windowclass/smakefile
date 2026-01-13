@@ -8,13 +8,12 @@ VERSION = 3
 REVISION = 0
 
 OPTIONS = 
-PUBSCREEN = SASPRJ.1
 
 WndTest: main.o gadtoolsbox.lib
   slink <WITH <
 TO WndTest
-FROM lib:c.o main.o
-LIB lib:sc.lib lib:amiga.lib gadtoolsbox.lib
+FROM sc:lib/c.o main.o
+LIB sc:lib/sc.lib lib:amiga.lib gadtoolsbox.lib
 NOICONS
 SD
 SC
@@ -64,5 +63,5 @@ edit:
 
 #install all libraries
 install:
-  @-copy gadtoolsbox.lib lib:
-  @-copy *.h include:gadtoolsbox
+  @-copy gadtoolsbox.lib ///SDK/lib
+#  @-copy *.h include:gadtoolsbox
