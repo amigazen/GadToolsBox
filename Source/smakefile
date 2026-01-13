@@ -5,13 +5,12 @@
 all: GadToolsBox
 
 VERSION = 3
-REVISION = 0
+REVISION = 1
 
 #OPTIONS = StripDebug
 OPTIONS = 
 PROGRAMNAME = GadToolsBox
 CATALOGLANG = Polski
-PUBSCREEN = SASPRJ.1
 GTPI = plugins/button.c plugins/checkbox.c plugins/cycle.c plugins/integer.c plugins/listview.c plugins/mx.c plugins/number.c plugins/palette.c plugins/scroller.c plugins/slider.c plugins/string.c plugins/text.c
 BOOPSIPI = plugins/colorwheel.c plugins/datatype.c plugins/gradientslider.c plugins/page.c plugins/popupmenu.c plugins/progress.c plugins/tapedeck.c plugins/textfield.c plugins/treeview.c
 OBJECTS = main.c amigaguide.c gadtools.c gadtools_cat.c gadtools_img.c guifunc.c objects.c window.c gadget.c frame.c menu.c inout.c toolbar.c image.c screen.c string.c version.c draw.c memory.a $(GTPI) $(BOOPSIPI)
@@ -84,6 +83,6 @@ edit:
   @-ed main.c
 
 catalog:
-  flexcat $(PROGRAMNAME).cd Catalogs/polski/$(PROGRAMNAME).ct CATALOG Catalogs/polski/$(PROGRAMNAME).catalog
-  @-copy Catalogs/$(CATALOGLANG)/$(PROGRAMNAME).catalog LOCALE:$(CATALOGLANG)
+#  flexcat $(PROGRAMNAME).cd Catalogs/polski/$(PROGRAMNAME).ct CATALOG Catalogs/polski/$(PROGRAMNAME).catalog
+#  @-copy Catalogs/$(CATALOGLANG)/$(PROGRAMNAME).catalog LOCALE:$(CATALOGLANG)
   @-avail FLUSH >NIL:

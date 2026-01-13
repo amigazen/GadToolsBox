@@ -2,4 +2,5 @@
 *.uaem
 *.map
 *.lnk
+*.tmp
 output.txt
