@@ -38,7 +38,7 @@ LIBPREFIX _
 LIBFD listview.fd
 TO listview.gadget
 FROM sc:lib/libent.o sc:lib/libinit.o listview.o
-LIB li  b:sc.lib lib:amiga.lib
+LIB sc:lib/sc.lib lib:amiga.lib
 NOICONS
 SC
 SD

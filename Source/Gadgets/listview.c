@@ -12,7 +12,7 @@
 #include<proto/intuition.h>
 #include<proto/gadtools.h>
 #include<proto/layers.h>
-#include<gadgets/listview.h>
+#include<proto/alib.h>
 #include<graphics/gfxmacros.h>
 #include<exec/memory.h>
 #include<libraries/gadtools.h>
@@ -20,7 +20,11 @@
 #include<intuition/gadgetclass.h>
 #include<intuition/intuitionbase.h>
 #include<intuition/icclass.h>
+
 #include"listview.gadget_rev.h"
+
+#include"gadgets/listview.h"
+
 
 TEXT version[]=VERSTAG;
 
